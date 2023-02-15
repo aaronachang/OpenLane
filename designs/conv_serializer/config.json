@@ -1,0 +1,14 @@
+{
+    "DESIGN_NAME": "conv_serializer",
+    "VERILOG_FILES": "dir::src/*.v",
+    "CLOCK_PORT": "CLK",
+    "CLOCK_PERIOD": 10.0,
+    "DESIGN_IS_CORE": false,
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 25 25",
+    "FP_CORE_UTIL": 80,
+    "BOTTOM_MARGIN_MULT": 1,
+    "TOP_MARGIN_MULT": 1,
+    "LEFT_MARGIN_MULT": 4,
+    "RIGHT_MARGIN_MULT": 4
+}
