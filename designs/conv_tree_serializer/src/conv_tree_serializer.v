@@ -1,49 +1,53 @@
-module conv_tree_serializer (CLK,SERIAL_OUT,PAR_IN1,PAR_IN2,PAR_IN3,PAR_IN4,PAR_IN5,PAR_IN6,PAR_IN7,PAR_IN8);
-    input CLK;
-    //input RESET;
-    output reg SERIAL_OUT;
-    input PAR_IN1,PAR_IN2,PAR_IN3,PAR_IN4,PAR_IN5,PAR_IN6,PAR_IN7,PAR_IN8;
+module conv_serializer (
+        input CLK
+        ,input RESET
+        ,output logic SERIAL_OUT
+        ,input PAR_IN1
+        ,input PAR_IN2
+    );
+    logic IN1_L1, IN1_L2, IN1_L3, IN1_L4, IN1_L5;
 
-    reg [3:0] IN1_S1;
-    reg [1:0] IN1_S2;
+    assign SERIAL_OUT = (CLK) ? IN1_L5 : IN1_L3;
 
-    wire [7:0] INT_IN;
+    always_latch begin
+        if (CLK) begin
+            IN1_L2 = (RESET) ? IN1_L1 : 1'b0;
+            IN1_L5 = (RESET) ? IN1_L4 : 1'b0;
+        end else begin
+            IN1_L1 = (RESET) ? PAR_IN1 : 1'b0;
+            IN1_L3 = (RESET) ? IN1_L2 : 1'b0;
+            IN1_L4 = (RESET) ? PAR_IN2 : 1'b0;
+        end
+    end
+endmodule
 
-    assign INT_IN[0] = PAR_IN1;
-    assign INT_IN[1] = PAR_IN2;
-    assign INT_IN[2] = PAR_IN3;
-    assign INT_IN[3] = PAR_IN4;
-    assign INT_IN[4] = PAR_IN5;
-    assign INT_IN[5] = PAR_IN6;
-    assign INT_IN[6] = PAR_IN7;
-    assign INT_IN[7] = PAR_IN8;
+module conv_tree_serializer #(
+    parameter INPUTS_NUM = 32*8,
+    parameter STAGES_NUM = $clog2(INPUTS_NUM)
+    )(
+        input CLK
+        ,input RESET
+        ,output logic SERIAL_OUT
+        ,input [INPUTS_NUM-1:0] PAR_IN
+    );
+    
+    logic [INPUTS_NUM-1:0] INT_STAGE [STAGES_NUM:0];
+
+    assign INT_STAGE[0] = PAR_IN;
+    assign SERIAL_OUT = INT_STAGE[STAGES_NUM][0];
 
     generate
-        for (genvar i=0; i<4; i++) begin
-            conv_serializer S1(
-                .CLK(CLK),
-                .SERIAL_OUT(IN1_S1[i]),
-                .PAR_IN1(INT_IN[i*2]),
-                .PAR_IN2(INT_IN[i*2+1])
-            );
-        end
-
-        for (genvar j=0; j<2; j++) begin
-            conv_serializer S2(
-                .CLK(CLK),
-                .SERIAL_OUT(IN1_S2[j]),
-                .PAR_IN1(IN1_S1[j*2]),
-                .PAR_IN2(IN1_S1[j*2+1])
-            );
+        for (genvar stage=1; stage<=STAGES_NUM; stage++) begin : stage_gen
+            localparam MUX_NUM = INPUTS_NUM >> stage-1;
+            for (genvar i=0; i<MUX_NUM; i++) begin : mux_gen
+                conv_serializer S(
+                    .CLK(CLK),
+                    .RESET(RESET),
+                    .SERIAL_OUT(INT_STAGE[stage][i]),
+                    .PAR_IN1(INT_STAGE[stage-1][i*2]),
+                    .PAR_IN2(INT_STAGE[stage-1][i*2+1])
+                );
+            end
         end
     endgenerate
-
-    conv_serializer S3(
-        .CLK(CLK),
-        .SERIAL_OUT(SERIAL_OUT),
-        .PAR_IN1(IN1_S2[0]),
-        .PAR_IN2(IN1_S2[1])
-    );
-
-    
 endmodule

@@ -2,11 +2,11 @@
     "DESIGN_NAME": "serializer_unit_cell",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
-    "CLOCK_PERIOD": 50.0,
+    "CLOCK_PERIOD": 5.0,
     "DESIGN_IS_CORE": false,
-    "FP_PDN_CORE_RING": false,
-    "RT_MAX_LAYER": "met4",
     "FP_SIZING": "absolute",
     "DIE_AREA": "0 0 160 170",
-    "FP_IO_MIN_DISTANCE": 1
+    "FP_IO_MIN_DISTANCE": 1,
+    "BOTTOM_MARGIN_MULT": 2,
+    "TOP_MARGIN_MULT" : 2
 }
