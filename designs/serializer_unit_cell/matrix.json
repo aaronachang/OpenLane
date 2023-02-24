@@ -1,0 +1,13 @@
+{
+    "FP_CORE_UTIL": [
+      25,
+      30,
+      50,
+      70,
+      80,
+      90
+    ],
+    "preload": {
+      "STD_CELL_LIBRARY": "sky130_fd_sc_hd"
+    }
+  }
