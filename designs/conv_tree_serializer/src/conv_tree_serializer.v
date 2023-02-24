@@ -28,7 +28,7 @@ module conv_tree_serializer #(
             for (genvar i=0; i<MUX_NUM; i++) begin : mux_gen
                 conv_serializer S(
                     .CLK(CLKS[STAGES_NUM-stage]),
-                    .RESET(RESET),
+                    //.RESET(RESET),
                     .SERIAL_OUT(INT_STAGE[stage][i]),
                     .PAR_IN1(INT_STAGE[stage-1][i*2]),
                     .PAR_IN2(INT_STAGE[stage-1][i*2+1])

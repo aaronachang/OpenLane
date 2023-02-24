@@ -2,7 +2,7 @@
     "DESIGN_NAME": "conv_tree_serializer",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
-    "CLOCK_PERIOD": 20,
+    "CLOCK_PERIOD": 10,
     "DESIGN_IS_CORE": false,
     "SYNTH_STRATEGY": "AREA 3",
     "ROUTING_CORES": 4,
