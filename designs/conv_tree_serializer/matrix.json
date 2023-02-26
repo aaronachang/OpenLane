@@ -1,9 +1,13 @@
 {
     "SYNTH_MAX_FANOUT": [
-      18,
       30,
       50,
-      70
+      60,
+      80,
+      90,
+      100,
+      120,
+      140
     ],
     "preload": {
       "STD_CELL_LIBRARY": "sky130_fd_sc_hd"

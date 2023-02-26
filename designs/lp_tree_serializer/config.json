@@ -1,5 +1,5 @@
 {
-    "DESIGN_NAME": "conv_tree_serializer",
+    "DESIGN_NAME": "lp_tree_serializer",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
     "CLOCK_PERIOD": 6,
