@@ -170,6 +170,9 @@ proc run_non_interactive_mode {args} {
     set flags {-save -run_hooks -no_lvs -no_drc -no_antennacheck -gui}
     parse_key_args "run_non_interactive_mode" args arg_values $options flags_map $flags -no_consume
 
+    puts "$flags"
+    puts "flags_map"
+
     prep {*}$args
     # signal trap SIGINT save_state;
 
@@ -203,7 +206,7 @@ proc run_non_interactive_mode {args} {
         "antenna_check" "run_antenna_check_step $ANTENNACHECK_ENABLED " \
         "cvc_rv" "run_erc_step"
     ]
-
+	
     if { [info exists arg_values(-from) ]} {
         puts_info "Starting flow at $arg_values(-from)..."
         set ::env(CURRENT_STEP) $arg_values(-from)
