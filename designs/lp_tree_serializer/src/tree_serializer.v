@@ -23,11 +23,10 @@ module tree_serializer #(
             localparam CLKDIV_NUM = 32'd1 << (stage-1);
             localparam OUT_INDEX = (32'd1 << stage)-1;
             for (genvar j=0; j<CLKDIV_NUM; j++) begin : clk_gen
-                clk_divider clks ( //FIX
+                clk_divider clks (
                     .clk_i(CLKS[CLKDIV_NUM-1+j]),
-                    //.clk_i(CLKS[CLKDIV_NUM-1]),
                     .rst_i(RSTS[CLKDIV_NUM-1+j]),
-                    .init_i((j+1)%2),
+                    .init_i(1'b1),
                     .clk0_o(CLKS[OUT_INDEX+(j*2)]),
                     .clk90_o(CLKS[OUT_INDEX+(j*2)+1]),
                     .rst0_o(RSTS[OUT_INDEX+(j*2)]),

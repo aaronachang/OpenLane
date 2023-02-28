@@ -13,7 +13,14 @@ module lp_tree_serializer #(
     logic [1:0] RSTS;
     logic [INPUTS_NUM-1:0] INT_INPUTS;
 
-    clk_divider clkdiv0 (
+    /*
+    clk_divider #(.DIVISIONS(2)) clk_0 ( //FIX
+        .clk_i(CLK),
+        .rst_i(RESET),
+        .clk_o(CLKS[0])
+    );
+    */
+    clk_divider clkdiv0 ( //FIX
         .clk_i(CLK),
         .rst_i(RESET),
         .init_i(1'b1),

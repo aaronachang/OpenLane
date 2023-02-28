@@ -8,13 +8,17 @@ module clk_divider
     logic [2:0] hold_rsts;
     logic clk180;
     assign clk180 = ~clk_i;
-    assign rst0_o = hold_rsts[0];
+    assign rst0_o = hold_rsts[2];
     assign rst90_o = hold_rsts[2];
 
     always_ff @(posedge clk_i) begin
-        hold_rsts[0] <= rst_i;
-        hold_rsts[1] <= hold_rsts[0];
-        hold_rsts[2] <= hold_rsts[1];
+        if (~rst_i) begin
+            hold_rsts <= '0;
+        end else begin 
+            hold_rsts[0] <= rst_i;
+            hold_rsts[1] <= hold_rsts[0];
+            hold_rsts[2] <= hold_rsts[1];
+        end
     end
 
     // for clk0
