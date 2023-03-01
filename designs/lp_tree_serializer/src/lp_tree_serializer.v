@@ -10,34 +10,25 @@ module lp_tree_serializer #(
     logic [1:0] mux_out;
     logic [3:0] last_stage_inputs;
     logic [1:0] CLKS;
-    logic [1:0] RSTS;
+    logic tree_rst;
     logic [INPUTS_NUM-1:0] INT_INPUTS;
 
-    /*
-    clk_divider #(.DIVISIONS(2)) clk_0 ( //FIX
+    clk_divider clkdiv0 (
         .clk_i(CLK),
         .rst_i(RESET),
-        .clk_o(CLKS[0])
-    );
-    */
-    clk_divider clkdiv0 ( //FIX
-        .clk_i(CLK),
-        .rst_i(RESET),
-        .init_i(1'b1),
         .clk0_o(CLKS[0]),
         .clk90_o(CLKS[1]),
-        .rst0_o(RSTS[0]),
-        .rst90_o(RSTS[1])
+        .rst_o(tree_rst)
     );
     tree_serializer #(.INPUTS_NUM(INPUTS_NUM/2)) S0(
         .CLK(CLKS[0]),
-        .RESET(RSTS[0]),
+        .RESET(tree_rst),
         .SERIAL_OUT(mux_out[0]),
         .PAR_IN(INT_INPUTS[INPUTS_NUM/2-1:0])
     );
     tree_serializer #(.INPUTS_NUM(INPUTS_NUM/2)) S1(
         .CLK(CLKS[1]),
-        .RESET(RSTS[1]),
+        .RESET(tree_rst),
         .SERIAL_OUT(mux_out[1]),
         .PAR_IN(INT_INPUTS[INPUTS_NUM-1:INPUTS_NUM/2])
     );
