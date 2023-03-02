@@ -13,16 +13,22 @@ module clk_divider(
     // Note: 0 and 90 degree phase are actually 180 and 270 
     // degree phase from the input, but we phase shift by 
     // 180 by initializing 'in' to 1'b1
-    assign clk0_o = clk180;
-    assign clk90_o = clk270;
+    // assign clk0_o = clk180;
+    // assign clk90_o = clk270;
+    assign clk0_o = !d[1];
+    assign clk90_o = !d[0];
 
-    not #2(in_n, in);
-    not #2(d0_n, d[0]);
+    //not #2(in_n, in);
+    //not #2(d0_n, d[0]);
     assign in = rst_i ? clk180 : 1'b1;
-    assign d[0] = clk_i ? d[0] : in_n;
-    assign d[1] = clk_i ? d0_n : d[1];
-    not #2(clk180, d[1]);
-    not #2(clk270, d[0]);
+    // ebufn buff(
+    //     .A(in_n), 
+    //     .TE_B(clk_i),
+    //     .Z(d[0]));
+    assign d[0] = clk_i ? 1'bz : !in;
+    assign d[1] = clk_i ? !d[0] : 1'bz;
+    //not #2(clk180, d[1]);
+    //not #2(clk270, d[0]);
     
     logic [2:0] hold_rsts;
     assign rst_o = hold_rsts[2];
