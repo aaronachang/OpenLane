@@ -2,11 +2,10 @@
     "DESIGN_NAME": "lp_tree_serializer",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
-    "CLOCK_PERIOD": 5.5,
+    "CLOCK_PERIOD": 8,
     "DESIGN_IS_CORE": false,
     "SYNTH_STRATEGY": "AREA 3",
     "ROUTING_CORES": 4,
     "FP_SIZING": "absolute",
-    "DIE_AREA": "0 0 60 70",
-    "SYNTH_CLOCK_UNCERTAINTY": 0.15
+    "DIE_AREA": "0 0 65 75"
 }
