@@ -1,1 +1,0 @@
-../conv_tree_serializer/runs/full_guide/results/final/verilog/gl/conv_tree_serializer.nl.v
