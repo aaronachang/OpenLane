@@ -1,0 +1,5 @@
+../src/tb/lp_tree_serializer_tb.presyn.sv
+../src/rtl/lp/lp_tree_serializer.v
+../src/rtl/lp/tree_serializer.v
+../src/rtl/lp/clk_divider.v
+../src/rtl/lp/base_serializer.v

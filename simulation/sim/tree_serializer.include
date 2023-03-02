@@ -1,0 +1,4 @@
+../src/tb/tree_serializer_tb.sv
+../src/rtl/lp/tree_serializer.v
+../src/rtl/lp/clk_divider.v
+../src/rtl/lp/base_serializer.v

@@ -1,0 +1,4 @@
+../src/tb/conv_tree_serializer_tb.sv
+../src/rtl/conv/conv_tree_serializer.v
+../src/rtl/conv/conv_serializer.v
+../src/rtl/conv/clk_divider.v

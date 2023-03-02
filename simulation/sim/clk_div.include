@@ -1,0 +1,2 @@
+../src/rtl/lp/clk_div.v
+../src/tb/clk_div_tb.sv

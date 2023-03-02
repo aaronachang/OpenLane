@@ -1,0 +1,2 @@
+../src/tb/conv_serializer_tb.sv
+../src/rtl/conv_tree_serializer.sv
