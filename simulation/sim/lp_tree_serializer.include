@@ -1,14 +1,6 @@
 ../src/tb/lp_tree_serializer_tb.sv
 ../src/apr/lp_tree_serializer_final.v
-#clk_divider.sv
 # ====== sky130 files ===== 
-../src/libs.ref/sky130_ef_io.v
-../src/libs.ref/sky130_fd_io.v
 ../src/libs.ref/hd_primitives.v
 ../src/libs.ref/sky130_fd_sc_hd.v
 ../src/libs.ref/hvl_primitives.v
-../src/libs.ref/sky130_fd_sc_hvl.v
-../src/libs.ref/sky130_sram_1kbyte_1rw1r_32x256_8.v
-../src/libs.ref/sky130_sram_1kbyte_1rw1r_8x1024_8.v
-../src/libs.ref/sky130_sram_2kbyte_1rw1r_32x512_8.v
-../src/libs.ref/sram_1rw1r_32_256_8_sky130.v

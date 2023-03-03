@@ -1,0 +1,128 @@
+* Synopsys Nettran: RHEL64 T-2022.03.7342687 2022/02/23 
+* Created:  3/02/2023  18:03   
+* Options: -verilog hd_primitives.v -outType spice -outName hd_primitives.ckt 
+
+.GLOBAL VNB VPB VGND VPWR 
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood_pp$PG UDP_OUT UDP_IN VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood_pp$P UDP_OUT UDP_IN VPWR 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood_pp$G UDP_OUT UDP_IN VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood$l_pp$PG$S UDP_OUT UDP_IN VPWR VGND SLEEP 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood$l_pp$PG UDP_OUT UDP_IN VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_pwrgood$l_pp$G UDP_OUT UDP_IN VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_mux_4to2 X A0 A1 A2 A3 S0 S1 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_mux_2to1_N Y A0 A1 S 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_mux_2to1 X A0 A1 S 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N Q D GATE RESET NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$PR Q D GATE RESET 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N Q D GATE NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$P Q D GATE 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$lP_pp$PG$N Q D GATE NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dlatch$lP Q D GATE 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$PS_pp$PG$N Q D CLK SET NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$PS Q D CLK SET 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$PR_pp$PG$N Q D CLK RESET NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$PR Q D CLK RESET 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$P_pp$PG$N Q D CLK NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$P Q D CLK 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$NSR_pp$PG$N Q SET RESET CLK_N D NOTIFIER VPWR VGND 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_fd_sc_hd__udp_dff$NSR Q SET RESET CLK_N D 
+*.CELL_INFO NETTRAN_FALSE_EMPTY_CELL 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fill_12_NETTRAN_4 
+Xbase sky130_fd_sc_hd__fill 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fill_12 VPWR VGND VPB VNB 
+Xbase VPWR VGND VPB VNB sky130_fd_sc_hd__fill 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fill_8_NETTRAN_3 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fill_8 VPWR VGND VPB VNB 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fakediode_2_NETTRAN_2 DIODE 
+Xbase DIODE sky130_fd_sc_hd__diode 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__fakediode_2 DIODE VPWR VGND VPB VNB 
+Xbase DIODE VPWR VGND VPB VNB sky130_fd_sc_hd__diode 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__decap_12_NETTRAN_1 
+Xbase sky130_fd_sc_hd__decap 
+.ENDS
+
+.SUBCKT sky130_ef_sc_hd__decap_12 VPWR VGND VPB VNB 
+Xbase VPWR VGND VPB VNB sky130_fd_sc_hd__decap 
+.ENDS
+
