@@ -1,5 +1,6 @@
 ../src/tb/lp_tree_serializer_tb.sv
-../src/apr/lp_tree_serializer_final.v
+#../src/apr/lp_tree_serializer_final.v
+../src/apr/old_lp_tree_serializer_final.v
 # ====== sky130 files ===== 
 ../src/libs.ref/hd_primitives.v
 ../src/libs.ref/sky130_fd_sc_hd.v
