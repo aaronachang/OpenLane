@@ -1,0 +1,31 @@
+****** PrimeSim HSPICE -- T-2022.06 linux64 (May 20 2022 7637141) ******
+Input File: lp_tree_serializer_tb.ctl
+lic:
+lic: FLEXlm: SDK_12.10
+lic: USER:   nguyea9              HOSTNAME: n3301
+lic: HOSTID: 400a2d42             PID:      12132
+lic: Using FLEXlm license file:
+lic: 27008@synopsysls.s.uw.edu
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 24-jan-2025/2022.06
+lic: 1(in_use)/100(total) FLOATING license(s) on SERVER 27008@synopsysls.s.uw.edu
+lic:
+
+ init: begin read circuit files, cpu clock= 1.42E+00
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/ad
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/behave
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/bjt
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/burr_brn
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/comlinear
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/dio
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/fet
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/lin_tech
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/pci
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/signet
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/ti
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/tline
+       option search = /gscratch/ece/tools/vlsiapps/hspice/T-2022.06/hspice/parts/xilinx
+ init: end read circuit files, cpu clock= 1.43E+00 peak memory=     522 mb
+ init: begin check errors, cpu clock= 1.43E+00
+>error          ***** hspice job aborted
+ lic: Release hspice token(s)

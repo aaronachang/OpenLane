@@ -1,0 +1,1187 @@
+* Synopsys Nettran: RHEL64 T-2022.03.7342687 2022/02/23 
+* Created:  3/02/2023  14:10   
+* Options: -verilog lp_tree_serializer_final.v -outType spice -outName lp_tree_serializer.ckt 
+.INCLUDE "spice/sky130_ef_sc_hd__decap_12.spice"
+.INCLUDE "spice/sky130_ef_sc_hd__fakediode_2.spice"
+.INCLUDE "spice/sky130_ef_sc_hd__fill_12.spice"
+.INCLUDE "spice/sky130_ef_sc_hd__fill_4.spice"
+.INCLUDE "spice/sky130_ef_sc_hd__fill_8.spice"
+.INCLUDE "spice/sky130_fd_sc_hd.spice"
+.INCLUDE "spice/sky130_fd_sc_hvl.spice"
+
+
+.INCLUDE "spice/sky130_fd_pr__cap_mim_m3_1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_mim_m3_2.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_var_hvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_var_lvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_01p8x01p8_m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p4x04p6_m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p7x06p1_m1m2m3m4_shieldl1_fingercap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p7x11p1_m1m2m3m4_shieldl1_fingercap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p7x21p1_m1m2m3m4_shieldl1_fingercap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p7x41p1_m1m2m3m4_shieldl1_fingercap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_02p9x06p1_m1m2m3m4_shieldl1_fingercap2.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_03p9x03p9_m1m2_shieldl1_floatm3.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_noshield_o1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_noshield_o2subcell.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_shieldpo_floatm3.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1nhv.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1phv.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o2.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_06p8x06p1_l1m1m2m3_shieldpom4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_06p8x06p1_l1m1m2m3_shieldpom4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_noshield_o1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_noshield_o2subcell.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_m1m2_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p3x11p3_m1m2m3m4_shieldl1_wafflecap.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5_nhv.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5_nhv__base.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5_nhvtop.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2_shieldpom3.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldm4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldm4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldpom4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldpom4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x6.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x7.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x8.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x9.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_xtop.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldl1m5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldl1m5_top.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldm5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_m1m4_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x11p7_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_11p5x23p1_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_22p5x11p7_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_22p5x23p1_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_33p6x11p7_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_33p6x23p1_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_44p7x11p7_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield.model.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_55p8x11p7_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_55p8x11p7_pol1m1m2m3m4m5_noshield_m5pullin.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_55p8x23p1_pol1m1m2m3m4m5_noshield.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_55p8x23p1_pol1m1m2m3m4m5_noshield_m5pullin.spice"
+.INCLUDE "spice/sky130_fd_pr__cap_vpp_55p8x23p1_pol1m1m2m3m4m5_noshield_test.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pd2nw_05v5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pd2nw_05v5_hvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pd2nw_05v5_lvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pd2nw_11v0.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pd2nw_11v0_no_rs.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_05v5.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_05v5__extended_drain.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_05v5_lvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_05v5_nvt.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_11v0.model.spice"
+.INCLUDE "spice/sky130_fd_pr__diode_pw2nd_11v0_no_rs.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_01v8__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_05v0_nvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_nfet_g5v0d10v5__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_pfet_g5v0d10v5__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pd2nw_11v0_100.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pd2nw_11v0_200.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pd2nw_11v0_300.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_100__parasitic__diode_pw2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_200__parasitic__diode_pw2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_diode_pw2nd_11v0_300__parasitic__diode_pw2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_nfet_20v0_hbm_21vW60p00.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_nfet_20v0_hbm_32vW60p00.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_nfet_20v0_iec_21vW60p00.spice"
+.INCLUDE "spice/sky130_fd_pr__esd_rf_nfet_20v0_iec_32vW60p00.spice"
+.INCLUDE "spice/sky130_fd_pr__ind_03_90.model.spice"
+.INCLUDE "spice/sky130_fd_pr__ind_05_125.model.spice"
+.INCLUDE "spice/sky130_fd_pr__ind_05_220.model.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_01v8_lvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_03v3_nvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_05v0_nvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0__wafer_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_iso__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt__parasitic__diode_ps2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt_iso__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt_iso__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt_iso__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_nvt_iso__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_reverse_iso__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__parasitic__diode_ps2dn__extended_drain.model.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_20v0_zvt__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d10v5__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__nfet_g5v0d16v0__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5_W1p00L1p00.model.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5_W1p00L2p00.model.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5__f.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5__s.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5__t.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_05v5__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_11v0_W1p00L1p00.model.spice"
+.INCLUDE "spice/sky130_fd_pr__npn_11v0_W1p00L1p00.spice"
+.INCLUDE "spice/sky130_fd_pr__nwdiode_top.model.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_hvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_lvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_01v8_mvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__parasitic__diode_pw2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_20v0__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__subvt_mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d10v5__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__parasitic__diode_pw2dn.model.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__subcircuit.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pfet_g5v0d16v0__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__pnp_05v5_W0p68L0p68.model.spice"
+.INCLUDE "spice/sky130_fd_pr__pnp_05v5_W3p40L3p40.model.spice"
+.INCLUDE "spice/sky130_fd_pr__pnp_05v5_W3p40L3p40.spice"
+.INCLUDE "spice/sky130_fd_pr__res_generic_nd.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_generic_pd.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po_0p35.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po_0p69.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po_1p41.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po_2p85.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_high_po_5p73.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_iso_pw.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po_0p35.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po_0p69.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po_1p41.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po_2p85.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po_5p73.model.spice"
+.INCLUDE "spice/sky130_fd_pr__res_xhigh_po__base.model.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_aura_blocking.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_aura_drc_flag_check.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_aura_lvs_drc.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM02W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_aM04W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_b__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_hcM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_hcM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p42L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p42L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W0p84L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF06W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF08W0p42L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aF08W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM02W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_aM04W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM02W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_bM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_b__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM02W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_lvt_cM04W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_mcM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_01v8_mcM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_aup.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_noptap_iso.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_nvt_aup.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_nvt_noptap_iso.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_nvt_withptap.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_nvt_withptap_iso.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_withptap.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_withptap_iso.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_20v0_zvt_withptap.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W3p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W5p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM04W7p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W3p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W5p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_aM10W7p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_nfet_g5v0d10v5_b__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W1p00L1p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W1p00L2p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W1p00L4p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W1p00L8p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W2p00L2p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W2p00L4p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W2p00L8p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_05v5_W5p00L5p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_npn_11v0_W1p00L1p00.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF02W2p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF04W0p84L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF04W2p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF06W0p84L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF06W1p68L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF06W2p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF06W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF08W0p84L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aF08W1p68L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM02W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W1p65L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W3p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p18.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_aM04W5p00L0p25.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__fs.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__sf.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__tt_correln.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__tt_correlp.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__tt_leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_b__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_hcM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_hcM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p35.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W3p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p35.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM02W5p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p35.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W3p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p35.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_lvt_aM04W5p00L0p50.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mcM04W3p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mcM04W5p00L0p15.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__ff_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__fs_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__sf_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__ss_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__tt_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__tt_leak_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_01v8_mvt__wafer_discrete.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pfet_20v0_withptap.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pnp_05v5_W0p68L0p68.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_pnp_05v5_W3p40L3p40.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_test_coil1.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_test_coil2.spice"
+.INCLUDE "spice/sky130_fd_pr__rf_test_coil3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_latch.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_latch__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_flash.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_flash__mismatch.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt__ff.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt__leak.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt__ss.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt__tt.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_nfet_pass_lvt__wafer.corner.spice"
+.INCLUDE "spice/sky130_fd_pr__special_pfet_pass.pm3.spice"
+.INCLUDE "spice/sky130_fd_pr__special_pfet_pass__mismatch.corner.spice"
+
+*.SUBCKT lp_tree_serializer CLK RESET SERIAL_OUT VGND VPWR PAR_IN[15] PAR_IN[14] PAR_IN[13] 
+*+ PAR_IN[12] PAR_IN[11] PAR_IN[10] PAR_IN[9] PAR_IN[8] PAR_IN[7] PAR_IN[6] PAR_IN[5] 
+*+ PAR_IN[4] PAR_IN[3] PAR_IN[2] PAR_IN[1] PAR_IN[0] 
+XFILLER_0_103 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_0_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_0_16 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_0_20 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_0_29 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_0_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_41 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_0_47 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_0_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_62 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_0_70 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_75 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_0_8 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_0_82 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_0_90 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_0_98 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_10_107 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_10_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_10_19 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_10_26 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_10_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_10_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_10_37 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_10_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_10_78 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_10_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_10_9 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_10_96 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_105 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_11_111 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_11_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_11_19 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_26 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_11_34 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_11_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_11_63 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_11_68 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_11_93 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_108 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_12_16 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_25 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_12_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_12_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_12_35 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_42 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_12_52 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_59 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_63 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_12_69 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_76 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_12_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_12_9 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_12_90 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_12_98 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_13_103 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_13_11 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_13_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_13_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_13_18 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_13_26 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_13_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_13_34 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_13_40 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_13_48 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_13_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_13_62 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_13_7 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_13_74 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_13_80 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_13_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_13_91 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_13_95 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_14_103 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_14_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_14_15 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_14_21 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_14_26 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_14_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_14_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_14_34 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_14_54 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_14_66 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_14_71 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_14_77 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_14_8 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_14_82 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_14_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_15_100 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_107 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_111 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_15_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_15_12 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_19 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_15_44 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_52 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_15_63 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_67 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_15_84 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_15_91 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_16_112 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_16_21 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_16_27 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_16_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_16_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_16_49 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_16_69 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_16_77 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_16_83 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_16_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_16_90 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_16_98 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_17_100 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_17_106 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_17_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_17_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_17_24 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_17_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_17_45 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_17_52 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_17_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_17_7 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_17_71 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_17_75 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_17_88 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_18_102 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_18_106 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_18_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_18_16 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_18_25 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_18_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_35 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_18_42 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_18_50 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_18_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_71 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_18_78 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_18_8 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_18_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_18_90 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_1_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_1_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_1_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_1_32 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_1_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_1_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_1_72 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_1_79 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_1_8 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_1_86 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_2_100 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_2_104 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_2_111 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_2_15 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_2_27 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_2_29 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_2_3 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_2_41 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_2_49 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_2_55 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_2_61 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_2_65 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_2_71 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_2_75 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_2_82 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_2_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_2_96 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_3_103 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_107 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_3_111 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_15 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_3_27 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_3_3 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_3_39 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_3_45 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_49 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_3_55 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_3_65 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_3_69 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_3_77 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_3_89 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_3_97 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_4_112 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_4_15 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_4_20 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_4_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_4_3 VGND VGND VPWR VPWR sky130_ef_sc_hd__decap_12 
+XFILLER_4_40 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_4_53 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_4_60 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_4_67 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_4_82 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_4_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_4_91 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_4_95 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_5_10 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_100 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_104 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_5_108 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_5_17 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_24 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_5_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_30 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_5_34 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_42 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_54 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_5_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_5_62 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_69 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_5_93 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_108 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_6_17 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_24 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_6_33 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_6_37 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_44 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_55 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_63 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_70 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_6_77 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_6_83 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_6_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_6_90 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_7_110 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_7_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_7_17 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_7_25 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_7_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_7_36 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_43 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_51 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_55 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_7_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_77 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_7_81 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_7_94 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_101 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_8_111 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_8_17 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_25 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_8_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_8_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_8_40 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_8_48 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_8_53 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_8 
+XFILLER_8_64 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_71 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_78 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_8_85 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_8_9 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_90 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_8_97 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_101 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_108 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_113 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_1 
+XFILLER_9_12 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__fill_2 
+XFILLER_9_36 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_53 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XFILLER_9_57 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_69 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_6 
+XFILLER_9_79 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_87 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XFILLER_9_94 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_4 
+XPHY_0 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_1 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_10 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_11 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_12 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_13 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_14 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_15 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_16 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_17 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_18 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_19 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_2 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_20 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_21 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_22 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_23 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_24 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_25 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_26 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_27 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_28 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_29 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_3 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_30 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_31 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_32 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_33 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_34 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_35 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_36 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_37 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_4 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_5 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_6 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_7 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_8 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XPHY_9 VGND VGND VPWR VPWR sky130_fd_sc_hd__decap_3 
+XTAP_38 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_39 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_40 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_41 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_42 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_43 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_44 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_45 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_46 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_47 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_48 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_49 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_50 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_51 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_52 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_53 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_54 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_55 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_56 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_57 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_58 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_59 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_60 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_61 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_62 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_63 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_64 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_65 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_66 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_67 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_68 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_69 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_70 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_71 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_72 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_73 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_74 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_75 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_76 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_77 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_78 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+XTAP_79 VGND VPWR sky130_fd_sc_hd__tapvpwrvgnd_1 
+X_098_ S0.clk_gen[1].clk_gen[0].clks.hold_rsts[1] S0.RESET VGND VGND VPWR VPWR _079_ sky130_fd_sc_hd__nand2_1 
+X_099_ _079_ VGND VGND VPWR VPWR _022_ sky130_fd_sc_hd__clkinv_2 
+X_100_ S0.RESET S0.clk_gen[1].clk_gen[0].clks.hold_rsts[0] VGND VGND VPWR VPWR _080_ sky130_fd_sc_hd__nand2_1 
+X_101_ _080_ VGND VGND VPWR VPWR _021_ sky130_fd_sc_hd__clkinv_2 
+X_102_ S0.RESET S1.clk_gen[1].clk_gen[0].clks.hold_rsts[1] VGND VGND VPWR VPWR _081_ sky130_fd_sc_hd__nand2_1 
+X_103_ _081_ VGND VGND VPWR VPWR _018_ sky130_fd_sc_hd__clkinv_2 
+X_104_ S0.RESET S1.clk_gen[1].clk_gen[0].clks.hold_rsts[0] VGND VGND VPWR VPWR _082_ sky130_fd_sc_hd__nand2_1 
+X_105_ _082_ VGND VGND VPWR VPWR _017_ sky130_fd_sc_hd__clkinv_2 
+X_106_ S1.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _094_ sky130_fd_sc_hd__clkinv_4 
+X_107_ clkdiv0.d[0] VGND VGND VPWR VPWR S1.CLK sky130_fd_sc_hd__inv_2 
+X_108_ clkdiv0.d[0] VGND VGND VPWR VPWR _083_ sky130_fd_sc_hd__clkbuf_1 
+X_109_ _083_ VGND VGND VPWR VPWR _097_ sky130_fd_sc_hd__clkbuf_1 
+X_110_ S1.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.clk90_o sky130_fd_sc_hd__inv_2 
+X_111_ S1.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _023_ sky130_fd_sc_hd__clkbuf_1 
+X_112_ _023_ VGND VGND VPWR VPWR _093_ sky130_fd_sc_hd__clkbuf_1 
+X_113_ S1.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _092_ sky130_fd_sc_hd__inv_2 
+X_114_ clkdiv0.d[0] VGND VGND VPWR VPWR _096_ sky130_fd_sc_hd__inv_2 
+X_115_ S0.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _024_ sky130_fd_sc_hd__clkbuf_1 
+X_116_ _024_ VGND VGND VPWR VPWR _089_ sky130_fd_sc_hd__clkbuf_1 
+X_117_ S0.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _088_ sky130_fd_sc_hd__clkinv_4 
+X_118_ clkdiv0.d[1] VGND VGND VPWR VPWR _025_ sky130_fd_sc_hd__clkbuf_1 
+X_119_ _025_ VGND VGND VPWR VPWR _091_ sky130_fd_sc_hd__clkbuf_1 
+X_120_ S0.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.clk90_o sky130_fd_sc_hd__inv_2 
+X_121_ S0.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _026_ sky130_fd_sc_hd__clkbuf_1 
+X_122_ _026_ VGND VGND VPWR VPWR _087_ sky130_fd_sc_hd__clkbuf_1 
+X_123_ S0.clk_gen[1].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _086_ sky130_fd_sc_hd__inv_2 
+X_124_ net21 VGND VGND VPWR VPWR _090_ sky130_fd_sc_hd__inv_2 
+X_125_ clknet_1_0__leaf_CLK VGND VGND VPWR VPWR _027_ sky130_fd_sc_hd__buf_1 
+X_126_ _027_ VGND VGND VPWR VPWR _085_ sky130_fd_sc_hd__buf_2 
+X_127__1 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR net19 sky130_fd_sc_hd__inv_2 
+X_128_ clkdiv0.d[1] net17 VGND VGND VPWR VPWR _028_ sky130_fd_sc_hd__nand2_1 
+X_129_ _028_ VGND VGND VPWR VPWR _010_ sky130_fd_sc_hd__clkinv_2 
+X_130_ S0.clk_gen[1].clk_gen[0].clks.hold_rsts[2] S0.clk_gen[2].clk_gen[1].clks.d[1] 
++ VGND VGND VPWR VPWR _029_ sky130_fd_sc_hd__nand2_1 
+X_131_ _029_ VGND VGND VPWR VPWR _003_ sky130_fd_sc_hd__clkinv_2 
+X_132_ S0.clk_gen[2].clk_gen[1].clks.d[0] VGND VGND VPWR VPWR _004_ sky130_fd_sc_hd__clkinv_4 
+X_133_ S0.clk_gen[1].clk_gen[0].clks.hold_rsts[2] S0.clk_gen[2].clk_gen[0].clks.d[1] 
++ VGND VGND VPWR VPWR _030_ sky130_fd_sc_hd__nand2_1 
+X_134_ _030_ VGND VGND VPWR VPWR _001_ sky130_fd_sc_hd__clkinv_2 
+X_135_ S0.clk_gen[2].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _002_ sky130_fd_sc_hd__inv_2 
+X_136_ S0.RESET S0.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _031_ sky130_fd_sc_hd__nand2_1 
+X_137_ _031_ VGND VGND VPWR VPWR _000_ sky130_fd_sc_hd__clkinv_2 
+X_138_ S1.clk_gen[1].clk_gen[0].clks.hold_rsts[2] S1.clk_gen[2].clk_gen[1].clks.d[1] 
++ VGND VGND VPWR VPWR _032_ sky130_fd_sc_hd__nand2_1 
+X_139_ _032_ VGND VGND VPWR VPWR _008_ sky130_fd_sc_hd__clkinv_2 
+X_140_ S1.clk_gen[2].clk_gen[1].clks.d[0] VGND VGND VPWR VPWR _009_ sky130_fd_sc_hd__clkinv_4 
+X_141_ S1.clk_gen[1].clk_gen[0].clks.hold_rsts[2] S1.clk_gen[2].clk_gen[0].clks.d[1] 
++ VGND VGND VPWR VPWR _033_ sky130_fd_sc_hd__nand2_1 
+X_142_ _033_ VGND VGND VPWR VPWR _006_ sky130_fd_sc_hd__clkinv_2 
+X_143_ S1.clk_gen[2].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _007_ sky130_fd_sc_hd__inv_2 
+X_144_ S0.RESET S1.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _034_ sky130_fd_sc_hd__nand2_1 
+X_145_ _034_ VGND VGND VPWR VPWR _005_ sky130_fd_sc_hd__clkinv_2 
+X_146_ S0.stage_gen[1].mux_gen[1].S.PAR_IN1 VGND VGND VPWR VPWR _035_ sky130_fd_sc_hd__inv_2 
+X_147_ _002_ _035_ VGND VGND VPWR VPWR _036_ sky130_fd_sc_hd__nand2_1 
+X_148_ S0.stage_gen[1].mux_gen[1].S.PAR_IN2 VGND VGND VPWR VPWR _037_ sky130_fd_sc_hd__inv_2 
+X_149_ _037_ S0.clk_gen[2].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _038_ sky130_fd_sc_hd__nand2_1 
+X_150_ _036_ _038_ S0.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _039_ sky130_fd_sc_hd__nand3_1 
+X_151_ S0.clk_gen[2].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _040_ sky130_fd_sc_hd__inv_2 
+X_152_ S0.stage_gen[1].mux_gen[0].S.PAR_IN1 VGND VGND VPWR VPWR _041_ sky130_fd_sc_hd__inv_2 
+X_153_ _040_ _041_ VGND VGND VPWR VPWR _042_ sky130_fd_sc_hd__nand2_1 
+X_154_ S0.stage_gen[1].mux_gen[0].S.PAR_IN2 VGND VGND VPWR VPWR _043_ sky130_fd_sc_hd__inv_2 
+X_155_ _043_ S0.clk_gen[2].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _044_ sky130_fd_sc_hd__nand2_1 
+X_156_ _042_ _044_ _088_ VGND VGND VPWR VPWR _045_ sky130_fd_sc_hd__nand3_1 
+X_157_ _039_ _045_ VGND VGND VPWR VPWR _046_ sky130_fd_sc_hd__nand2_1 
+X_158_ _046_ _090_ VGND VGND VPWR VPWR _047_ sky130_fd_sc_hd__nand2_1 
+X_159_ S0.clk_gen[2].clk_gen[1].clks.d[1] S0.stage_gen[1].mux_gen[2].S.PAR_IN1 VGND 
++ VGND VPWR VPWR _048_ sky130_fd_sc_hd__nand2b_1 
+X_160_ S0.clk_gen[2].clk_gen[1].clks.d[1] net12 VGND VGND VPWR VPWR _049_ sky130_fd_sc_hd__nand2_1 
+X_161_ _048_ S0.clk_gen[1].clk_gen[0].clks.clk90_o _049_ VGND VGND VPWR VPWR _050_ sky130_fd_sc_hd__nand3_1 
+X_162_ _004_ S0.stage_gen[1].mux_gen[3].S.PAR_IN1 VGND VGND VPWR VPWR _051_ sky130_fd_sc_hd__nand2_1 
+X_163_ S0.clk_gen[2].clk_gen[1].clks.d[0] net14 VGND VGND VPWR VPWR _052_ sky130_fd_sc_hd__nand2_1 
+X_164_ _051_ S0.clk_gen[1].clk_gen[0].clks.d[0] _052_ VGND VGND VPWR VPWR _053_ sky130_fd_sc_hd__nand3_1 
+X_165_ _050_ _053_ net21 VGND VGND VPWR VPWR _054_ sky130_fd_sc_hd__nand3_1 
+X_166_ _047_ _054_ VGND VGND VPWR VPWR S0.SERIAL_OUT sky130_fd_sc_hd__nand2_1 
+X_167_ S1.stage_gen[1].mux_gen[1].S.PAR_IN1 VGND VGND VPWR VPWR _055_ sky130_fd_sc_hd__inv_2 
+X_168_ _007_ _055_ VGND VGND VPWR VPWR _056_ sky130_fd_sc_hd__nand2_1 
+X_169_ net3 VGND VGND VPWR VPWR _057_ sky130_fd_sc_hd__inv_2 
+X_170_ _057_ S1.clk_gen[2].clk_gen[0].clks.d[0] VGND VGND VPWR VPWR _058_ sky130_fd_sc_hd__nand2_1 
+X_171_ _056_ _058_ S1.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _059_ sky130_fd_sc_hd__nand3_1 
+X_172_ S1.clk_gen[2].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _060_ sky130_fd_sc_hd__inv_2 
+X_173_ S1.stage_gen[1].mux_gen[0].S.PAR_IN1 VGND VGND VPWR VPWR _061_ sky130_fd_sc_hd__inv_2 
+X_174_ _060_ _061_ VGND VGND VPWR VPWR _062_ sky130_fd_sc_hd__nand2_1 
+X_175_ S1.stage_gen[1].mux_gen[0].S.PAR_IN2 VGND VGND VPWR VPWR _063_ sky130_fd_sc_hd__inv_2 
+X_176_ _063_ S1.clk_gen[2].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _064_ sky130_fd_sc_hd__nand2_1 
+X_177_ _062_ _064_ _094_ VGND VGND VPWR VPWR _065_ sky130_fd_sc_hd__nand3_1 
+X_178_ _059_ _065_ VGND VGND VPWR VPWR _066_ sky130_fd_sc_hd__nand2_1 
+X_179_ _066_ S1.CLK VGND VGND VPWR VPWR _067_ sky130_fd_sc_hd__nand2_1 
+X_180_ S1.clk_gen[2].clk_gen[1].clks.d[1] S1.stage_gen[1].mux_gen[2].S.PAR_IN1 VGND 
++ VGND VPWR VPWR _068_ sky130_fd_sc_hd__nand2b_1 
+X_181_ S1.clk_gen[2].clk_gen[1].clks.d[1] net5 VGND VGND VPWR VPWR _069_ sky130_fd_sc_hd__nand2_1 
+X_182_ _068_ S1.clk_gen[1].clk_gen[0].clks.clk90_o _069_ VGND VGND VPWR VPWR _070_ sky130_fd_sc_hd__nand3_1 
+X_183_ _009_ S1.stage_gen[1].mux_gen[3].S.PAR_IN1 VGND VGND VPWR VPWR _071_ sky130_fd_sc_hd__nand2_1 
+X_184_ S1.clk_gen[2].clk_gen[1].clks.d[0] net7 VGND VGND VPWR VPWR _072_ sky130_fd_sc_hd__nand2_1 
+X_185_ _071_ S1.clk_gen[1].clk_gen[0].clks.d[0] _072_ VGND VGND VPWR VPWR _073_ sky130_fd_sc_hd__nand3_1 
+X_186_ _070_ _073_ clkdiv0.d[0] VGND VGND VPWR VPWR _074_ sky130_fd_sc_hd__nand3_1 
+X_187_ _067_ _074_ VGND VGND VPWR VPWR S1.SERIAL_OUT sky130_fd_sc_hd__nand2_1 
+X_188_ last_stage.PAR_IN2 last_stage.PAR_IN1 clknet_1_1__leaf_CLK VGND VGND VPWR 
++ VPWR _075_ sky130_fd_sc_hd__mux2_4 
+X_189_ _075_ VGND VGND VPWR VPWR net18 sky130_fd_sc_hd__buf_6 
+X_190_ S1.clk_gen[1].clk_gen[0].clks.d[1] VGND VGND VPWR VPWR _076_ sky130_fd_sc_hd__clkbuf_1 
+X_191_ _076_ VGND VGND VPWR VPWR _095_ sky130_fd_sc_hd__clkbuf_1 
+X_192_ clkdiv0.d[0] VGND VGND VPWR VPWR _011_ sky130_fd_sc_hd__clkinv_2 
+X_193_ clkdiv0.d[0] VGND VGND VPWR VPWR _012_ sky130_fd_sc_hd__clkinv_2 
+X_194_ clkdiv0.d[0] VGND VGND VPWR VPWR _013_ sky130_fd_sc_hd__clkinv_2 
+X_195_ net17 clkdiv0.hold_rsts[0] VGND VGND VPWR VPWR _077_ sky130_fd_sc_hd__nand2_1 
+X_196_ _077_ VGND VGND VPWR VPWR _019_ sky130_fd_sc_hd__clkinv_2 
+X_197_ net17 clkdiv0.hold_rsts[1] VGND VGND VPWR VPWR _078_ sky130_fd_sc_hd__nand2_1 
+X_198_ _078_ VGND VGND VPWR VPWR _020_ sky130_fd_sc_hd__clkinv_2 
+X_199_ clkdiv0.d[1] VGND VGND VPWR VPWR _014_ sky130_fd_sc_hd__clkinv_2 
+X_200_ clkdiv0.d[1] VGND VGND VPWR VPWR _015_ sky130_fd_sc_hd__clkinv_2 
+X_201_ clkdiv0.d[1] VGND VGND VPWR VPWR _016_ sky130_fd_sc_hd__clkinv_2 
+X_202_ S0.SERIAL_OUT clknet_1_1__leaf_CLK VGND VGND VPWR VPWR last_stage_inputs[0] sky130_fd_sc_hd__dlxtp_1 
+X_203_ last_stage_inputs[0] clknet_1_1__leaf_CLK VGND VGND VPWR VPWR last_stage.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_204_ net8 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[0].S.PAR_IN2 sky130_fd_sc_hd__dlxtn_1 
+X_205_ net10 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[1].S.PAR_IN2 sky130_fd_sc_hd__dlxtn_1 
+X_206_ net11 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[2].S.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_207_ net13 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[3].S.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_208_ net16 clknet_1_0__leaf_CLK VGND VGND VPWR VPWR S1.stage_gen[1].mux_gen[0].S.PAR_IN2 sky130_fd_sc_hd__dlxtn_1 
+X_209_ net2 clknet_1_1__leaf_CLK VGND VGND VPWR VPWR S1.stage_gen[1].mux_gen[1].S.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_210_ net4 clknet_1_1__leaf_CLK VGND VGND VPWR VPWR S1.stage_gen[1].mux_gen[2].S.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_211_ net6 clknet_1_1__leaf_CLK VGND VGND VPWR VPWR S1.stage_gen[1].mux_gen[3].S.PAR_IN1 sky130_fd_sc_hd__dlxtn_1 
+X_212_ clknet_1_1__leaf_CLK S1.SERIAL_OUT VGND VGND VPWR VPWR last_stage.PAR_IN2 sky130_fd_sc_hd__dfxtp_1 
+X_213_ clknet_1_1__leaf_CLK net1 VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[0].S.PAR_IN1 sky130_fd_sc_hd__dfxtp_1 
+X_214_ clknet_1_1__leaf_CLK net9 VGND VGND VPWR VPWR S0.stage_gen[1].mux_gen[1].S.PAR_IN1 sky130_fd_sc_hd__dfxtp_1 
+X_215_ clknet_1_0__leaf_CLK net15 VGND VGND VPWR VPWR S1.stage_gen[1].mux_gen[0].S.PAR_IN1 sky130_fd_sc_hd__dfxtp_1 
+X_216_ _011_ S0.RESET VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.hold_rsts[0] sky130_fd_sc_hd__dfxtp_1 
+X_217_ _012_ _017_ VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.hold_rsts[1] sky130_fd_sc_hd__dfxtp_1 
+X_218_ _013_ _018_ VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.hold_rsts[2] sky130_fd_sc_hd__dfxtp_1 
+X_219_ clknet_1_0__leaf_CLK _019_ VGND VGND VPWR VPWR clkdiv0.hold_rsts[1] sky130_fd_sc_hd__dfxtp_1 
+X_220_ clknet_1_0__leaf_CLK _020_ VGND VGND VPWR VPWR S0.RESET sky130_fd_sc_hd__dfxtp_2 
+X_221_ clknet_1_0__leaf_CLK net17 VGND VGND VPWR VPWR clkdiv0.hold_rsts[0] sky130_fd_sc_hd__dfxtp_1 
+X_222_ _014_ S0.RESET VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.hold_rsts[0] sky130_fd_sc_hd__dfxtp_1 
+X_223_ _015_ _021_ VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.hold_rsts[1] sky130_fd_sc_hd__dfxtp_1 
+X_224_ _016_ _022_ VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.hold_rsts[2] sky130_fd_sc_hd__dfxtp_1 
+X_225_ S1.CLK net19 VGND VGND VPWR VPWR clkdiv0.d[1] sky130_fd_sc_hd__ebufn_4 
+X_226_ _010_ _085_ VGND VGND VPWR VPWR clkdiv0.d[0] sky130_fd_sc_hd__ebufn_8 
+X_227_ _003_ _086_ VGND VGND VPWR VPWR S0.clk_gen[2].clk_gen[1].clks.d[0] sky130_fd_sc_hd__ebufn_2 
+X_228_ _004_ _087_ VGND VGND VPWR VPWR S0.clk_gen[2].clk_gen[1].clks.d[1] sky130_fd_sc_hd__ebufn_1 
+X_229_ _001_ _088_ VGND VGND VPWR VPWR S0.clk_gen[2].clk_gen[0].clks.d[0] sky130_fd_sc_hd__ebufn_1 
+X_230_ _002_ _089_ VGND VGND VPWR VPWR S0.clk_gen[2].clk_gen[0].clks.d[1] sky130_fd_sc_hd__ebufn_2 
+X_231_ _000_ _090_ VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.d[0] sky130_fd_sc_hd__ebufn_2 
+X_232_ S0.clk_gen[1].clk_gen[0].clks.clk90_o _091_ VGND VGND VPWR VPWR S0.clk_gen[1].clk_gen[0].clks.d[1] sky130_fd_sc_hd__ebufn_4 
+X_233_ _008_ _092_ VGND VGND VPWR VPWR S1.clk_gen[2].clk_gen[1].clks.d[0] sky130_fd_sc_hd__ebufn_2 
+X_234_ _009_ _093_ VGND VGND VPWR VPWR S1.clk_gen[2].clk_gen[1].clks.d[1] sky130_fd_sc_hd__ebufn_1 
+X_235_ _006_ _094_ VGND VGND VPWR VPWR S1.clk_gen[2].clk_gen[0].clks.d[0] sky130_fd_sc_hd__ebufn_1 
+X_236_ _007_ _095_ VGND VGND VPWR VPWR S1.clk_gen[2].clk_gen[0].clks.d[1] sky130_fd_sc_hd__ebufn_2 
+X_237_ _005_ _096_ VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.d[0] sky130_fd_sc_hd__ebufn_2 
+X_238_ S1.clk_gen[1].clk_gen[0].clks.clk90_o _097_ VGND VGND VPWR VPWR S1.clk_gen[1].clk_gen[0].clks.d[1] sky130_fd_sc_hd__ebufn_4 
+Xclkbuf_0_CLK CLK VGND VGND VPWR VPWR clknet_0_CLK sky130_fd_sc_hd__clkbuf_16 
+Xclkbuf_1_0__f_CLK clknet_0_CLK VGND VGND VPWR VPWR clknet_1_0__leaf_CLK sky130_fd_sc_hd__clkbuf_16 
+Xclkbuf_1_1__f_CLK clknet_0_CLK VGND VGND VPWR VPWR clknet_1_1__leaf_CLK sky130_fd_sc_hd__clkbuf_16 
+Xhold2 clkdiv0.d[1] VGND VGND VPWR VPWR net21 sky130_fd_sc_hd__dlygate4sd3_1 
+Xinput1 PAR_IN[0] VGND VGND VPWR VPWR net1 sky130_fd_sc_hd__clkbuf_1 
+Xinput10 PAR_IN[3] VGND VGND VPWR VPWR net10 sky130_fd_sc_hd__clkbuf_1 
+Xinput11 PAR_IN[4] VGND VGND VPWR VPWR net11 sky130_fd_sc_hd__clkbuf_1 
+Xinput12 PAR_IN[5] VGND VGND VPWR VPWR net12 sky130_fd_sc_hd__clkbuf_1 
+Xinput13 PAR_IN[6] VGND VGND VPWR VPWR net13 sky130_fd_sc_hd__clkbuf_1 
+Xinput14 PAR_IN[7] VGND VGND VPWR VPWR net14 sky130_fd_sc_hd__clkbuf_1 
+Xinput15 PAR_IN[8] VGND VGND VPWR VPWR net15 sky130_fd_sc_hd__clkbuf_1 
+Xinput16 PAR_IN[9] VGND VGND VPWR VPWR net16 sky130_fd_sc_hd__clkbuf_1 
+Xinput17 RESET VGND VGND VPWR VPWR net17 sky130_fd_sc_hd__clkbuf_1 
+Xinput2 PAR_IN[10] VGND VGND VPWR VPWR net2 sky130_fd_sc_hd__clkbuf_1 
+Xinput3 PAR_IN[11] VGND VGND VPWR VPWR net3 sky130_fd_sc_hd__clkbuf_1 
+Xinput4 PAR_IN[12] VGND VGND VPWR VPWR net4 sky130_fd_sc_hd__clkbuf_1 
+Xinput5 PAR_IN[13] VGND VGND VPWR VPWR net5 sky130_fd_sc_hd__clkbuf_1 
+Xinput6 PAR_IN[14] VGND VGND VPWR VPWR net6 sky130_fd_sc_hd__clkbuf_1 
+Xinput7 PAR_IN[15] VGND VGND VPWR VPWR net7 sky130_fd_sc_hd__clkbuf_1 
+Xinput8 PAR_IN[1] VGND VGND VPWR VPWR net8 sky130_fd_sc_hd__clkbuf_1 
+Xinput9 PAR_IN[2] VGND VGND VPWR VPWR net9 sky130_fd_sc_hd__clkbuf_1 
+Xoutput18 net18 VGND VGND VPWR VPWR SERIAL_OUT sky130_fd_sc_hd__clkbuf_1 
+*.ENDS
+
