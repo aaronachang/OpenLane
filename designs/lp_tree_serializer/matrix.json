@@ -1,13 +1,9 @@
 {
-    "SYNTH_MAX_FANOUT": [
-      30,
-      50,
-      60,
-      80,
-      90,
-      100,
-      120,
-      140
+    "CLOCK_BUFFER_FANOUT": [
+      8,
+      16,
+      32,
+      64
     ],
     "preload": {
       "STD_CELL_LIBRARY": "sky130_fd_sc_hd"

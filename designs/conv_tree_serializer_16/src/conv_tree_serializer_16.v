@@ -1,5 +1,5 @@
-module conv_tree_serializer #(
-    parameter INPUTS_NUM = 8*32,
+module conv_tree_serializer_16 #(
+    parameter INPUTS_NUM = 16,
     localparam STAGES_NUM = $clog2(INPUTS_NUM)
     )(
         input CLK

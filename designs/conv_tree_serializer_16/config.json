@@ -1,5 +1,5 @@
 {
-    "DESIGN_NAME": "lp_tree_serializer",
+    "DESIGN_NAME": "conv_tree_serializer_16",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
     "CLOCK_PERIOD": 5.8,
@@ -7,5 +7,5 @@
     "SYNTH_STRATEGY": "AREA 3",
     "ROUTING_CORES": 4,
     "FP_SIZING": "absolute",
-    "DIE_AREA": "0 0 65 75"
+    "DIE_AREA": "0 0 75 85"
 }

@@ -1,11 +1,11 @@
 {
-    "DESIGN_NAME": "serializer_unit_cell",
+    "DESIGN_NAME": "serializer_unit_cell_mod",
     "VERILOG_FILES": "dir::src/*.v",
     "CLOCK_PORT": "CLK",
     "CLOCK_PERIOD": 3.2,
     "DESIGN_IS_CORE": false,
     "FP_SIZING": "absolute",
-    "DIE_AREA": "0 0 160 170",
+    "DIE_AREA": "0 0 100 110",
     "FP_IO_MIN_DISTANCE": 1,
     "SYNTH_STRATEGY": "AREA 3",
     "ROUTING_CORES": 4
