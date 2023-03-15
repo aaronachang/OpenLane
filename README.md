@@ -34,14 +34,22 @@ Low Power Tree Serializer design:
 lp_tree_serializer
 
 Simulations are run in the simulation/sim directory.
+
 For each make command, specify TOP=\<serializer_version>, where \<serializer_version> is serdes for OpenSERDES, conv_tree_serializer for the conventional tree, and lp_tree_serializer for the low power tree. 
 For pre-synthesis simulations, use TOP=\<serializer_version>.presyn
+
 Make all will run vcs and validate text file output is correct.
+
 Make vcs will run the corresponding testbench module that tests 10 random inputs and outputs a waveform and text file of serializer inputs and outputs. Post-synthesis simulations include sdf annotations. 
+
 Make compare will run check_output.py to check that text file output is correct
+
 Make wave will open the waveform with silicon explorer
+
 Submodule testbenches are in simulation/src/submodule and include files are in simulation/sim/submodule.
+
 Archived top-level testbenches are in simulation/src/archive and their include files are in simulation/sim/archive.
+
 Note that post-apr verification for lp_tree_serializer doesn?t exist because tri-state buffers output Z instead of holding state when disabled. Pre-synthesis verification using latch behavior was determined to be sufficient for our purposes. Materials from our attempts to use hspice to run analog simulations are in simulation/sim/hspice.
 
 
