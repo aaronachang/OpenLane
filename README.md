@@ -46,9 +46,9 @@ Make compare will run check_output.py to check that text file output is correct
 
 Make wave will open the waveform with silicon explorer
 
-Submodule testbenches are in simulation/src/submodule and include files are in simulation/sim/submodule.
+Submodule testbenches are in simulation/src/tb/submodule and include files are in simulation/sim/submodule.
 
-Archived top-level testbenches are in simulation/src/archive and their include files are in simulation/sim/archive.
+Archived top-level testbenches are in simulation/src/tb/archive and their include files are in simulation/sim/archive.
 
 Note that post-apr verification for lp_tree_serializer doesn?t exist because tri-state buffers output Z instead of holding state when disabled. Pre-synthesis verification using latch behavior was determined to be sufficient for our purposes. Materials from our attempts to use hspice to run analog simulations are in simulation/sim/hspice.
 
