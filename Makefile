@@ -17,6 +17,8 @@ OPENLANE_DIR ?= $(shell pwd)
 
 DOCKER_OPTIONS = $(shell $(PYTHON_BIN) ./env.py docker-config)
 
+DOCKER_OPTIONS += -e DISPLAY=host.docker.internal:0
+
 DOCKER_ARCH ?= $(shell $(PYTHON_BIN) ./docker/current_platform.py)
 
 # Allow Configuring Memory Limits

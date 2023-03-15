@@ -10,7 +10,8 @@ module tree_serializer #(
     
     logic [INPUTS_NUM-1:0] INT_STAGE [STAGES_NUM:0];
     logic [INPUTS_NUM-2:0] CLKS;
-    logic [INPUTS_NUM-2:0] RSTS;
+    logic [(INPUTS_NUM-2)/2:0] RSTS;
+    logic [1:0] extra_clks;
 
     assign CLKS[0] = CLK;
     assign RSTS[0] = RESET;
@@ -25,15 +26,15 @@ module tree_serializer #(
             for (genvar j=0; j<CLKDIV_NUM; j++) begin : clk_gen
                 clk_divider clks (
                     .clk_i(CLKS[CLKDIV_NUM-1+j]),
-                    .rst_i(RSTS[CLKDIV_NUM-1+j]),
+                    .rst_i(RSTS[CLKDIV_NUM-1+(j/2)]),
                     .clk0_o(CLKS[OUT_INDEX+(j*2)]),
                     .clk90_o(CLKS[OUT_INDEX+(j*2)+1]),
-                    .rst0_o(RSTS[OUT_INDEX+(j*2)]),
-                    .rst90_o(RSTS[OUT_INDEX+(j*2)+1])
+                    .rst_o(RSTS[CLKDIV_NUM+j])
                 );
             end
         end
     endgenerate
+    
 
     // for this generate block, stages are indexed largest to smallest
     generate

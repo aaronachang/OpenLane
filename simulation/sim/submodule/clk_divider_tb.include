@@ -1,0 +1,2 @@
+../src/tb/clk_divider_tb.sv
+../src/rtl/clk_divider.sv
