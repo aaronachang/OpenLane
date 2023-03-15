@@ -8,21 +8,29 @@
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/python%20code%20style-black-000000.svg" alt="Python Code Style: black"/></a>
 </p>
 
-For EE 541:
+## For EE 541:
 Generated files (.sdf, .v) for sims are located in designs/<serializer>/sim
+
 Source files (.v) are located in designs/<serializer>/src
+
 config.json is located in designs/<serializer>
 
 OpenSERDES Serializer design variations:
+
 serializer_unit_cell (original)
+
 serializer_unit_cell_mod (modified)
+
 serializer_unit_cell_16 (16-bit)
 
 Conventional Tree Serializer design variations:
+
 conv_tree_serializer
+
 conv_tree_serializer_16
 
 Low Power Tree Serializer design:
+
 lp_tree_serializer
 
 OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, KLayout and a number of custom scripts for design exploration and optimization. The flow performs all ASIC implementation steps from RTL all the way down to GDSII.
