@@ -1,4 +1,4 @@
-//`include "sky130_fd_sc_hd__fill_2.v"
+// This tests post-apr OpenSerdes with pre-determined inputs 
 `default_nettype wire
 module serializer_tb ();
 	parameter CLOCK_PERIOD=100;

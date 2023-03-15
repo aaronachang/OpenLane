@@ -1,3 +1,4 @@
+// This tests a 2-input conv_serializer
 module conv_serializer_tb ();
     logic CLK, RESET, SERIAL_OUT, PAR_IN1,
     PAR_IN2;

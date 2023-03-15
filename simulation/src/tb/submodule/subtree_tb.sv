@@ -1,16 +1,12 @@
-module lp_clk_divider_tb();
+// This tests a small low power tree
+module subtree_tb();
     logic clk_i, rst_i;
 
-    logic trigger, clk2_0, clk2_90, clk4_0, clk4_90, clk4_45, clk4_idk;
-    always_ff @(posedge clk_i) begin
-        if (~rst_i) trigger <= 1'b0;
-        else begin
-            if (dut1.clk180) trigger <= 1'b1;
-            else trigger <= trigger;
-        end
-    end
+    logic clk2_0, clk2_90, clk4_0, clk4_90, clk4_45, clk4_idk;
 
     logic rsts[6:0];
+    logic [1:0] d;
+    logic [3:0] d_in;
 
     clk_divider dut0 (
         .clk_i,
@@ -33,11 +29,32 @@ module lp_clk_divider_tb();
     clk_divider dut2 (
         .clk_i(clk2_90),
         .rst_i(rsts[2]),
-        .init_i(1'b1),
+        .init_i(1'b0),
         .clk0_o(clk4_45),
         .clk90_o(clk4_idk),
         .rst0_o(rsts[5]),
         .rst90_o(rsts[6])
+    );
+
+    base_serializer mux0 (
+        .CLK(clk_i),
+        .SERIAL_OUT(out),
+        .PAR_IN1(d[0]),
+        .PAR_IN2(d[1])
+    );
+
+    base_serializer mux1 (
+        .CLK(clk2_0),
+        .SERIAL_OUT(d[0]),
+        .PAR_IN1(d_in[0]),
+        .PAR_IN2(d_in[1])
+    );
+
+    base_serializer mux2 (
+        .CLK(clk2_90),
+        .SERIAL_OUT(d[1]),
+        .PAR_IN1(d_in[2]),
+        .PAR_IN2(d_in[3])
     );
 
     parameter CLOCK_PERIOD=100;
@@ -47,12 +64,15 @@ module lp_clk_divider_tb();
 	end
     
     initial begin
-        $vcdplusfile("lp_clk_divider.vcd.vpd");
         $vcdpluson;
         $vcdplusmemon;
         rst_i <= '0;
+        d_in <= '0;
         @(posedge clk_i);
         rst_i <= '1;
+        d_in <= 4'b1011;
+        repeat(10) @(posedge clk_i);
+        d_in <= '0;
         repeat(20) @(posedge clk_i);
         $finish;
     end

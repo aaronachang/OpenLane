@@ -1,3 +1,4 @@
+// This tests pre-syn OpenSerdes and conv tree with pre-determined inputs
 module serializer_tb ();
 	parameter CLOCK_PERIOD=100;
 

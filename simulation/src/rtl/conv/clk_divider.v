@@ -1,1 +1,1 @@
-../../../../designs/conv_tree_serializer/src/clk_divider.v
+../../../../designs/conv_tree_serializer_16/src/clk_divider.v

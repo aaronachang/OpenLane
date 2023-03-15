@@ -1,8 +1,8 @@
-module tree_serializer_tb ();
+// This tests one input on the lp_tree_serializer
+module lp_1input_tb ();
     logic CLK, RESET, SERIAL_OUT;
     logic [7:0] PAR_IN;
 
-    //tree_serializer dut (.*);
     lp_tree_serializer dut (.*);
     
     parameter CLOCK_PERIOD=100;
@@ -12,7 +12,7 @@ module tree_serializer_tb ();
 	end
 
     initial begin
-        $vcdplusfile({"tree_serializer.vcd.vpd"});
+        $vcdplusfile({"lp_1input.vcd.vpd"});
         $vcdpluson;
         RESET <= '0;
         PAR_IN <= '0;

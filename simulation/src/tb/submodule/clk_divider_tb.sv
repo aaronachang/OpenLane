@@ -1,3 +1,4 @@
+// This tests the clk_divider module
 module clk_divider_tb();
     logic clk_i, rst_i, clk_o;
 

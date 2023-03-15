@@ -1,9 +1,7 @@
-// This tests the post-apr conv_tree_serializer with random inputs
+// This tests the pre-syn conv_tree_serializer with random inputs
 module conv_tree_serializer_tb ();
     logic CLK, RESET, SERIAL_OUT;
     logic [15:0] PAR_IN;
-    supply1 VPWR;
-    supply0 VGND;
     logic [15:0] pre_PAR_IN;
 
     conv_tree_serializer_16 dut (.*);
@@ -35,9 +33,8 @@ module conv_tree_serializer_tb ();
     parameter CLEAR_CYCLES = 7;
     integer i, file;
     initial begin
-        file = $fopen("conv_tree_serializer.txt", "w");
-        $sdf_annotate("../src/apr/conv/conv_tree_serializer_16.sdf");
-        $vcdplusfile("conv_tree_serializer.vcd.vpd");
+        file = $fopen("conv_tree_serializer.presyn.txt", "w");
+        $vcdplusfile("conv_tree_serializer.presyn.vcd.vpd");
         $vcdpluson;
         RESET <= '0;
         pre_PAR_IN <= '0;

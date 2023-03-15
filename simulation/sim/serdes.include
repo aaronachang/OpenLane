@@ -1,5 +1,5 @@
-../src/tb/lp_tree_serializer_tb.sv
-../src/apr/lp/lp_tree_serializer.v
+../src/tb/serdes_tb.sv
+../src/apr/serdes/serializer_unit_cell_16.v
 # ====== sky130 files ===== 
 ../src/libs.ref/sky130_ef_io.v
 ../src/libs.ref/sky130_fd_io.v

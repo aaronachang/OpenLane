@@ -45,7 +45,10 @@ pdks/
 
 # Venv
 /venv
-simulation/sim/*log
+simulation/sim/*log*
+simulation/sim/logs
 simulation/sim/csrc
 simulation/sim/simv
 simulation/sim/simv.daidir
+#simulation/sim/*vpd
+#simulation/sim/*txt

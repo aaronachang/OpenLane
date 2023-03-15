@@ -1,1 +1,1 @@
-../../../../designs/conv_tree_serializer/src/conv_serializer.v
+../../../../designs/conv_tree_serializer_16/src/conv_serializer.v
