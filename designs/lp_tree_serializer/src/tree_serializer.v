@@ -1,6 +1,6 @@
 module tree_serializer #(
     parameter INPUTS_NUM = 8,
-    parameter STAGES_NUM = $clog2(INPUTS_NUM)
+    localparam STAGES_NUM = $clog2(INPUTS_NUM)
     )(
         input CLK
         ,input RESET
@@ -35,6 +35,7 @@ module tree_serializer #(
         end
     endgenerate
     
+
     // for this generate block, stages are indexed largest to smallest
     generate
         for (genvar stage=1; stage<=STAGES_NUM; stage++) begin : stage_gen

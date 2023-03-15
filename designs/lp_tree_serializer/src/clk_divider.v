@@ -1,3 +1,4 @@
+
 module clk_divider(
     input logic clk_i,
     input logic rst_i,
@@ -29,5 +30,17 @@ module clk_divider(
             hold_rsts[1] <= hold_rsts[0];
             hold_rsts[2] <= hold_rsts[1];
         end
+    end
+
+    // for clk0
+    always_ff @(posedge clk_i) begin
+        if (~rst_i) clk0_o <= 1'b1;
+        else clk0_o <= ~clk0_o;
+    end
+    
+    // for clk90
+    always_ff @(posedge clk180) begin
+        if (~hold_rsts[0]) clk90_o <= 1'b1;
+        else clk90_o <= ~clk90_o;
     end
 endmodule
